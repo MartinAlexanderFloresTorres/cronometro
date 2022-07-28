@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: #7d2ae8;
+  padding: 30px;
+}
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.box {
+  max-width: 700px;
+  margin: 0 auto;
+  user-select: none;
+}
+.box .tiempo {
+  background: #fff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+.box .tiempo span {
+  width: 100px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 50px;
+  padding: 0 20px;
+  color: #333;
+}
+.box .tiempo span.puntos {
+  width: 10px;
+}
+.box .tiempo span.puntos--color,
+#milisegundos,
+#milisegundos-sg {
+  color: #7d2ae8;
+}
+.botones {
+  width: 100%;
+  height: 100%;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.botones button {
+  flex: auto;
+  height: 100%;
+  padding: 8px 16px;
+  color: #7d2ae8;
+  background: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.23);
+  transition: 0.3s ease all;
+}
+.botones button:active {
+  box-shadow: none;
+}
+.botones button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+.botones button:last-child {
+  background: #4d08e1;
+  color: #fff;
+}
+.botones button[data-id] {
+  background: #00b454;
+}
+.historial {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.item {
+  background: #fff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0 20px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  position: relative;
+}
+.item p {
+  position: absolute;
+  left: 20px;
+  bottom: 5px;
+  font-size: 13px;
+  color: rgb(89, 89, 89);
+  font-weight: 500;
+}
+.rigth {
+  position: relative;
+}
+.dots {
+  padding: 10px;
+  background: transparent;
+  font-size: 30px;
+  font-weight: 500;
+}
+.dots i {
+  pointer-events: none;
+}
+.opciones {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: -40px;
+  width: 0;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: 0.4s ease all;
+  box-shadow: inset 0 0 2px 0 rgb(192, 192, 192);
+  z-index: 1;
+}
+.opciones.active {
+  left: -66px;
+  width: fit-content;
+  opacity: 1;
+}
+.opciones button {
+  padding: 10px;
+  background: transparent;
+  font-size: 20px;
+  transition: 0.3s ease all;
+}
+.opciones button i {
+  pointer-events: none;
+}
+.opciones button:hover {
+  background: #ededed;
+}
+@media (max-width: 700px) {
+  .historial {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .box .tiempo {
+    padding: 10px;
+  }
+  .box .tiempo span {
+    font-size: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .box .tiempo span {
+    padding: 0;
+  }
+}
+@media (max-width: 500px) {
+  .historial {
+    grid-template-columns: 1fr;
+  }
+  .item span {
+    font-size: 18px;
+    padding: 0 5px;
+  }
+}
+@media (max-width: 360px) {
+  .box .tiempo span {
+    width: 40px;
+    font-size: 20px;
+    padding: 0 3px;
+  }
+  .botones button {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  body {
+    padding: 20px;
+  }
+  .item span {
+    font-size: 16px;
+    padding: 0 5px;
+  }
+}
+@media (max-width: 320px) {
+  .item span {
+    padding: 0 2px;
+  }
+  h1 {
+    font-size: 25px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 290px) {
+  .item span {
+    font-size: 14px;
+    padding: 0;
+  }
+  h1 {
+    font-size: 18px;
+  }
+}
