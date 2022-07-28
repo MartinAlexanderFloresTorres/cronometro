@@ -38,10 +38,10 @@ function resetFn() {
   startBtn.removeAttribute("disabled");
   stopBtn.removeAttribute("disabled");
   agregarBtn.setAttribute("disabled", "true");
-
   clearInterval(intervaloId);
   hora = minutos = segundos = milisegundos = "0" + 0;
   actualizarValores();
+  reiniciarBotonAgregar()
 }
 function reiniciarBotonAgregar() {
   botonIcono.classList.replace("bx-save", "bx-timer");
